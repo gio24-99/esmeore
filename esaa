@@ -1,0 +1,99 @@
+1 varianti
+1 D
+2. D
+3. B
+4. C
+5 B PL/SQL-ის ბლოკის დეკლარირების სექციაში
+6 REPLACE( 'We study Programming Languag', 'Programming', 'Oracle' )
+7 TO_DATE('Sep 30, 14 10:00 59 A.M.', 'YYYY/MM/DD HH:MI:SS')
+8 SELECT LEFT(JOB,3) FROM SCOTT.EMP;
+9 select concat(concat(SCOTT.EMP.ENAME, '-') , SCOTT.EMP.JOB) AS NameAndJob FROM SCOTT.EMP;
+10 SELECT EXTRACT(DAY FROM (TO_DATE(HIREDATE,'DD-MON-YY'))) FROM SCOTT.EMP;
+
+//
+/
+/
+/
+/
+////
+/
+/
+////
+/
+/
+1.b
+
+2.d
+
+3.b
+
+4.c
+
+5. PL/SQL-ის ბლოკის დეკლარირების სექციაში
+
+6.
+
+Declare  
+myString varchar2(50); 
+ FUNCTION changeString (str  Varchar2) 
+return varchar2 is  
+ Begin 
+ myString := 'We study Programming Language'; 
+ Return SUBSTR(myString, '0', '9') || str || SUBSTR(myString, '21', '29'); 
+ end;
+ Begin 
+DBMS_OUTPUT.PUT_LINE(changeString('english')); 
+end;
+
+7.
+
+declare 
+str varchar2(50);
+myDate date;
+begin
+str := 'Sep 30, 14 10:00 59 A.M.';
+myDate := TO_Date(str,'DD/MON/yyyy');
+dbms_output.put_line(myDate); 
+end;
+
+
+8.
+
+select SUBSTR(job,'0','3') As JOB from Scott.emp
+
+9.
+
+select CONCAT( ename || ' - ', job ) AS nameAndJob from Scott.emp
+
+10.
+
+select TO_CHAR(hiredate, 'DD') as Hiredate  from Scott.emp
+
+
+
+
+Bolo Amocana.
+
+create table Transactions(
+    transactionID number(15),
+    accountID  number(😎,
+    destinationAccountID number(😎,
+    moneyValue number(10),
+    constraint transaction_pk primary key(transactionID),
+    constraint transaction_fk foreign key (accountID) references Account(accountID)
+)
+
+create table Account(
+    accountID number(😎 not null,
+    balance number(10),
+    constraint account_pk primary key (accountID)
+);
+
+create table Client (
+clientID NUMBER(4),
+name VARCHAR2(10 BYTE),
+accountID number(😎,
+birthday date,
+constraint client_pk primary key (clientID), 
+constraint client_fk foreign key (accountID) References  Account(accountID)
+);
